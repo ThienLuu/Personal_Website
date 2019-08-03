@@ -1,0 +1,40 @@
+﻿#navbarToggler {
+    right: 20px;
+    top: 5px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#sideNav {
+    position: fixed;
+    width: 70px;
+    z-index: 100;
+    background-color: darkgray;
+    margin-left: 30px;
+    top: 30vh;
+    opacity: 0.1;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    display: none;
+}
+
+    #sideNav:hover {
+        opacity: 0.5;
+    }
+
+.sideNavImage {
+    opacity: 0.7;
+}
+
+    .sideNavImage:hover {
+        opacity: 1;
+    }
+
+#contactButtonSideNav {
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    background-color: transparent;
+}

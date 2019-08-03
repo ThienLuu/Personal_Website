@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!--External Links-->
+    @*<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Stylesheets-->
+    @*<link href="~/CSS/FadeAnimations.css" rel="stylesheet" />*@
+    <link href="~/CSS/Header.css" rel="stylesheet" />
+    <link href="~/CSS/Navbar.css" rel="stylesheet" />
+    <link href="~/CSS/Footer.css" rel="stylesheet" />
+    <link href="~/SCSS/NavbarAnimation.css" rel="stylesheet" />
+</head>
+<body onload="startTime()">
+    <!--Navbar-->
+    @*<div class="w3-container w3-center w3-animate-bottom">*@
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark m-0 p-0">
+            <div id="theTime" class="text-center col-lg-4 d-none d-lg-block">
+                <!--The Time-->
+            </div>
+            <div class="col-lg-4 mt-2">
+                <div class="row">
+                    <div class="col-5 d-none d-lg-block text-center">
+                        <a class="logoHeader" href="#">THIEN</a>
+                    </div>
+                    <div class="col-lg-2 p-0 text-center">
+                        <a class="navbar-brand disabled mx-auto p-0" href="#">
+                            <img src="~/Images/LOGO_3.png" height="60" />
+                        </a>
+                        <button id="navbarToggler" class="navbar-toggler collapsed position-absolute" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="col-5 d-none d-lg-block text-center">
+                        <a class="logoHeader" href="#">LUU</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="collapse navbar-collapse" id="navbarSupport">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item text-center">
+                                <a class="text-light nav-link" href="#">About Me</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a class="text-light nav-link" href="#linkMyWork">My Work</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a class="text-light nav-link" href="#">Other</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <!--#region MODAL - CONTACT ME (BUTTON INSIDE)-->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactMeModal">
+                                    Contact Me
+                                </button>
+
+                                <div class="modal fade" id="contactMeModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5>My Social Media</h5>
+                                                        <a href="https://au.linkedin.com/in/thien-l-10257b162" class="fa fa-linkedin faSocial" style="text-decoration: none"></a>
+                                                        <a href="https://github.com/ThienLuu" target="_blank">GitHub</a>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5>Contact me form</h5>
+                                                        <form action="/" method="post">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label class="float-left">Email</label>
+                                                                    <input class="form-control" type="email" placeholder="john.smith@sample.com" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <!--TEXT LIMIT????????-->
+                                                                    <label class="float-left">Message</label>
+                                                                    <textarea class="form-control" placeholder="Enter message here"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label>Captcha</label>
+                                                                CAPTCHA
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--#endregion-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--#region Side Nav-->
+    <nav id="sideNav" class="text-center">
+        <a class="nav-link" href="#">
+            <img class="p-0 m-0 sideNavImage" width="30" src="~/Images/Up_Arrow.png" />
+        </a>
+        <a class="nav-link" href="#">
+            <img class="p-0 m-0 sideNavImage" width="30" src="~/Images/Avatar.png" />
+        </a>
+        <a class="nav-link" href="#linkMyWork">
+            <img class="p-0 m-0 sideNavImage" width="30" src="~/Images/Suitcase.png" />
+        </a>
+        <a class="text-dark nav-link" href="#">
+            Other
+        </a>
+        <button id="contactButtonSideNav" class="text-center" type="button" data-toggle="modal" data-target="#contactMeModal">
+            <img class="p-0 m-0 sideNavImage" width="30" src="~/Images/Message.png" />
+        </button>
+    </nav>
+    <!--#endregion-->
+    @*</div>*@
+    <!--Navbar-->
+    <div class="container">
+        @RenderBody()
+    </div>
+    @*<footer>*@
+    <div id="footerPosition" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 text-center text-sm-left py-1">
+                <h4>Information</h4>
+                <a class="nav-link px-0 py-1 disabled not-allowed" href="#">FAQ</a>
+                <a class="nav-link px-0 py-1 text-info" href="#">Contact</a>
+                <a class="nav-link px-0 py-1 text-info" href="#">About</a>
+            </div>
+            <div class="col-sm-6 text-center text-sm-left py-1">
+                <h4>Connect With Me</h4>
+                <a href="https://au.linkedin.com/in/thien-l-10257b162" class="fa fa-linkedin faSocial" style="text-decoration: none" target="_blank"></a>
+                <a href="https://github.com/ThienLuu" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h6>
+                    <img id="copyrightSymbol" src="~/Images/Copyright_Symbol.png"/>opyright 2019
+                </h6>
+            </div>
+        </div>
+    </div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/lucy-g" title="Lucy G">Lucy G</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/hadrien" title="Hadrien">Hadrien</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/prettycons" title="prettycons">prettycons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    <!--#region Different format-->
+    <!--
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-6 text-center text-sm-left py-1">
+                        <h4>Information</h4>
+                        <a class="nav-link px-0 py-1 disabled not-allowed" href="#">FAQ</a>
+                        <a class="nav-link px-0 py-1 text-info" href="@Url.Action("Contact","Home")">Contact Us</a>
+                        <a class="nav-link px-0 py-1 text-info" href="@Url.Action("About","Home")">About Us</a>
+                    </div>
+                    <div class="col-sm-6 text-center text-sm-left py-1">
+                        <h4>The Fine Print</h4>
+                        <a class="nav-link px-0 py-1 disabled not-allowed" href="#">Security & Privacy</a>
+                        <a class="nav-link px-0 py-1 disabled not-allowed" href="#">Returns & Refunds</a>
+                        <a class="nav-link px-0 py-1 disabled not-allowed" href="#">Terms & Conditions</a>
+                        <a class="nav-link px-0 py-1 disabled not-allowed" href="#">Delivery</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-6 text-center text-sm-left py-1">
+                        <h4>Account</h4>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a class="nav-link px-0 py-1 disabled not-allowed" href="#">Delete Account</a>
+                            <a class="nav-link px-0 py-1 disabled not-allowed" href="#">Subscribe</a>
+                            <a class="nav-link px-0 py-1 text-info" href="@Url.Action("Logout", "Account")">Logout</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link px-0 py-1 text-info" href="@Url.Action("Register", "Account")">Register</a>
+                            <a class="nav-link px-0 py-1 disabled not-allowed" href="#">Subscribe</a>
+                            <a class="nav-link px-0 py-1 text-info" href="@Url.Action("Login", "Account")">Login</a>
+                        }
+                    </div>
+                    <div class="col-sm-6 text-center text-sm-left py-1">
+                        <h4>Connect With Us</h4>
+                        <a href="#" class="fa fa-facebook faSocial" style="text-decoration: none"></a>
+                        <a href="#" class="fa fa-twitter faSocial" style="text-decoration: none"></a>
+                        <a href="#" class="fa fa-youtube faSocial" style="text-decoration: none"></a>
+                        <a href="#" class="fa fa-instagram faSocial" style="text-decoration: none"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!--#endregion -->
+    @*</footer>*@
+    <!--Node Modules-->
+    <script src="~/node_modules/jquery/dist/jquery.js"></script>
+    <script src="~/node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!--Other Scripts-->
+    <script src="~/JS/Clock.js"></script>
+    <script src="~/JS/SideNav.js"></script>
+</body>
+</html>
